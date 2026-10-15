@@ -1,0 +1,36 @@
+/* Product card */
+.pcard { background: #fff; border: 1px solid #e3efd3; border-radius: 16px; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+.pcard:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.pcard__img { position: relative; height: 130px; display: grid; place-items: center; font-size: 2.6rem; color: #fff; background: linear-gradient(135deg, var(--g900), var(--lime)); }
+.pcard__badge { position: absolute; top: 10px; left: 10px; background: #d93a3a; color: #fff; font-size: 0.68rem; font-family: var(--body); padding: 2px 10px; border-radius: 6px; }
+.pcard__body { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pcard__body h3 { font-size: 1.05rem; }
+.pcard__qty { color: var(--muted); font-size: 0.88rem; }
+.pcard__qty b { color: var(--g800); font-size: 1.1rem; }
+.pcard .btn { margin-top: auto; font-size: 0.82rem; }
+
+/* WhatsApp floating button */
+.waFloat { position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff; font-size: 1.9rem; display: grid; place-items: center; box-shadow: 0 8px 22px rgba(37, 211, 102, 0.5); animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+
+/* Footer */
+.footer { background: var(--forest); color: #cfe3b8; padding-top: 56px; }
+.footer__grid { display: grid; grid-template-columns: 1.3fr 0.7fr 1.4fr; gap: 36px; }
+.footer__logo { font-family: var(--head); font-size: 1.5rem; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.footer__logo em { font-style: normal; color: var(--lime-2); }
+.footer h4 { color: #fff; margin-bottom: 14px; }
+.footer a:not(.btn) { display: block; padding: 4px 0; }
+.footer a:not(.btn):hover { color: var(--lime-2); }
+.footer p { margin-bottom: 10px; font-size: 0.92rem; display: flex; gap: 8px; align-items: flex-start; }
+.footer p svg { margin-top: 5px; flex-shrink: 0; color: var(--lime-2); }
+.footer .btn { margin-top: 10px; }
+.footer__bar { margin-top: 40px; padding: 18px 5%; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; }
+
+@media (max-width: 1024px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 768px) { .waFloat { width: 52px; height: 52px; font-size: 1.7rem; } }
+@media (max-width: 520px) { .footer__grid { grid-template-columns: 1fr; gap: 26px; } .waFloat { right: 14px; bottom: 14px; } }
+@media (max-width: 350px) { .footer__logo { font-size: 1.25rem; } .waFloat { width: 46px; height: 46px; font-size: 1.5rem; } }
+
+.pcard__img { padding: 0; overflow: hidden; }
+.pcard__img .img { position: absolute; inset: 0; }
+.pcard__badge { z-index: 1; }
