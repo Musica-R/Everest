@@ -7,6 +7,7 @@ import Img from '../components/Img';
 import ProductCard from '../components/ProductCard';
 import { agriProducts, cleaningProducts, featured } from '../data/products';
 import { images } from '../data/images';
+import { productImage } from '../data/productImages';
 import { waLink } from '../data/site';
 import '../styles/pages.css';
 
@@ -18,7 +19,12 @@ function ItemCard({ item, image, label }) {
       <div className="item__body">
         <small>{label}</small>
         <h3>{pick(item)}</h3>
-        <a className="btn btn--lime btn--block" href={waLink(`Hello Everest Agencies, I would like to enquire about ${item.en}.`)} target="_blank" rel="noreferrer">
+        <a
+          className="btn btn--lime btn--block"
+          href={waLink(`Hello Everest Agencies, I would like to enquire about ${item.en}.`)}
+          target="_blank"
+          rel="noreferrer"
+        >
           <FaWhatsapp /> {t.products.enquire}
         </a>
       </div>
@@ -36,14 +42,20 @@ export default function Products() {
     const s = q.trim().toLowerCase();
     return !s || item.en.toLowerCase().includes(s) || item.ml.includes(s);
   };
-  const feat = useMemo(() => featured.filter((f) => !q.trim() || f.name.toLowerCase().includes(q.trim().toLowerCase())), [q]);
+  const feat = useMemo(
+    () => featured.filter((f) => !q.trim() || f.name.toLowerCase().includes(q.trim().toLowerCase())),
+    [q]
+  );
   const agri = useMemo(() => agriProducts.filter(match), [q]);
   const clean = useMemo(() => cleaningProducts.filter(match), [q]);
 
   const showFeat = tab === 'all' || tab === 'featured';
   const showAgri = tab === 'all' || tab === 'agri';
   const showClean = tab === 'all' || tab === 'cleaning';
-  const empty = (!showFeat || !feat.length) && (!showAgri || !agri.length) && (!showClean || !clean.length);
+  const empty =
+    (!showFeat || !feat.length) &&
+    (!showAgri || !agri.length) &&
+    (!showClean || !clean.length);
 
   return (
     <>
@@ -60,7 +72,9 @@ export default function Products() {
           <Reveal className="filters">
             <div className="tabs">
               {['all', 'featured', 'agri', 'cleaning'].map((k) => (
-                <button key={k} className={tab === k ? 'active' : ''} onClick={() => setTab(k)}>{p.tabs[k]}</button>
+                <button key={k} className={tab === k ? 'active' : ''} onClick={() => setTab(k)}>
+                  {p.tabs[k]}
+                </button>
               ))}
             </div>
             <label className="search">
@@ -75,7 +89,7 @@ export default function Products() {
               <div className="grid4">
                 {feat.map((f, i) => (
                   <Reveal key={f.name} delay={(i % 4) * 120}>
-                    <ProductCard product={f} image={images.products[i % images.products.length]} />
+                    <ProductCard product={f} image={productImage(f.name)} />
                   </Reveal>
                 ))}
               </div>
@@ -89,7 +103,7 @@ export default function Products() {
               <div className="grid4">
                 {agri.map((item, i) => (
                   <Reveal key={item.en} delay={(i % 4) * 100}>
-                    <ItemCard item={item} label={t.products.agriHead} image={images.agriItems[i % images.agriItems.length]} />
+                    <ItemCard item={item} label={t.products.agriHead} image={productImage(item.en)} />
                   </Reveal>
                 ))}
               </div>
@@ -102,7 +116,7 @@ export default function Products() {
               <div className="grid4">
                 {clean.map((item, i) => (
                   <Reveal key={item.en} delay={(i % 4) * 100}>
-                    <ItemCard item={item} label={t.products.cleanHead} image={images.cleanItems[i % images.cleanItems.length]} />
+                    <ItemCard item={item} label={t.products.cleanHead} image={productImage(item.en)} />
                   </Reveal>
                 ))}
               </div>
