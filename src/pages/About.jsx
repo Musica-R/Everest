@@ -23,7 +23,7 @@ export default function About() {
       <section className="section">
         <div className="container">
           <div className="photos">
-            {[images.farmer, images.garden, images.cleaning].map((src, i) => (
+            {["/assets/p10.jpg", "/assets/p18.jpg", "/assets/p13.jpg"].map((src, i) => (
               <Reveal key={i} delay={i * 150} className="photos__item"><Img src={src} alt="" /></Reveal>
             ))}
           </div>

@@ -54,7 +54,7 @@ export default function Navbar() {
             <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
             <button className={lang === 'ml' ? 'active' : ''} onClick={() => setLang('ml')}>മലയാളം</button>
           </div>
-          <a className="btn btn--lime nav__wa" href={waLink()} target="_blank" rel="noreferrer" aria-label="WhatsApp">
+          <a className="btn btn--lime nav__wa " href={waLink()} target="_blank" rel="noreferrer" aria-label="WhatsApp">
             <FaWhatsapp /> <span className="waText">{t.whatsapp}</span>
             <span className="btn__arrow"><FiArrowUpRight /></span>
           </a>

@@ -33,7 +33,7 @@ export default function Footer() {
           <p>{t.network.gstin}: {gstin}</p>
         </div>
       </div>
-      <div className="footer__bar">{t.footer.rights} · {t.footer.photos}</div>
+      <div className="footer__bar">{t.footer.rights}</div>
     </footer>
   );
 }

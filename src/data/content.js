@@ -93,7 +93,7 @@ export const ui = {
       footerServing: 'Serving Thrissur, Palakkad, Malappuram, Kozhikode, Kannur, Kasaragod, and Wayanad, Kerala.',
       enquire: 'Dealership Enquiry', viewMore: 'View Dealer Network',
     },
-    footer: { rights: '© 2026 Everest Agencies. All rights reserved.', quick: 'Quick Links', reach: 'Reach Us', photos: 'Photos: Unsplash' },
+    footer: { rights: '© 2026 Everest Agencies. All rights reserved.', quick: 'Quick Links', reach: 'Reach Us' },
   },
   ml: {
     brand: 'Everest', brand2: 'Agencies', brandSub: 'കാർഷിക സൂപ്പർ മാർക്കറ്റ്',
@@ -188,6 +188,6 @@ export const ui = {
       footerServing: 'തൃശ്ശൂർ, പാലക്കാട്, മലപ്പുറം, കോഴിക്കോട്, കണ്ണൂർ, കാസർഗോഡ്, വയനാട് — കേരളത്തിൽ സേവനം.',
       enquire: 'ഡീലർഷിപ്പ് അന്വേഷണം', viewMore: 'ഡീലർ ശൃംഖല കാണുക',
     },
-    footer: { rights: '© 2026 Everest Agencies. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.', quick: 'വേഗത്തിൽ', reach: 'ബന്ധപ്പെടാൻ', photos: 'ചിത്രങ്ങൾ: Unsplash' },
+    footer: { rights: '© 2026 Everest Agencies. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.', quick: 'വേഗത്തിൽ', reach: 'ബന്ധപ്പെടാൻ' },
   },
 };

@@ -11,6 +11,7 @@ import { waLink, since } from '../data/site';
 import Img from '../components/Img';
 import { images } from '../data/images';
 import '../styles/home.css';
+import { productImage } from '../data/productImages';
 
 // One icon per "Why choose" card (same order as t.why.items)
 const whyIcons = [FiGrid, FiPackage, FaLeaf, FiMapPin, FiPhoneCall];
@@ -46,8 +47,8 @@ export default function Home() {
           </div>
 
           <div className="hero__panels">
-            <Reveal delay={300} className="panel panel--1"><Img src={images.leaf} alt="" /><span>{t.hero.chips[0]}</span></Reveal>
-            <Reveal delay={500} className="panel panel--2"><Img src={images.seedling} alt="" /><span>{t.hero.chips[2]}</span></Reveal>
+            <Reveal delay={300} className="panel panel--1"><Img src="/assets/pes1.jpg" alt="" /><span>{t.hero.chips[0]}</span></Reveal>
+            <Reveal delay={500} className="panel panel--2"><Img src="/assets/seed.jpg" alt="" /><span>{t.hero.chips[2]}</span></Reveal>
           </div>
         </div>
       </section>
@@ -62,7 +63,7 @@ export default function Home() {
           </div>
 
           <div className="photos">
-            {[images.farmer, images.seedling, images.greens].map((src, i) => (
+            {["/assets/fer.jpg", "/assets/p4.jpg", "/assets/p19.jpg"].map((src, i) => (
               <Reveal key={i} delay={i * 150} className="photos__item"><Img src={src} alt="" /></Reveal>
             ))}
           </div>
@@ -150,7 +151,9 @@ export default function Home() {
           <SectionTitle title={t.products.title} highlight={t.products.highlight} />
           <div className="grid4">
             {featured.map((p, i) => (
-              <Reveal key={p.name} delay={(i % 4) * 120}><ProductCard product={p} image={images.products[i % images.products.length]} /></Reveal>
+              <Reveal key={p.name} delay={(i % 4) * 120}>
+                <ProductCard product={p} image={productImage(p.name)} />
+              </Reveal>
             ))}
           </div>
           <Reveal as="p" className="note">{t.products.note}</Reveal>
